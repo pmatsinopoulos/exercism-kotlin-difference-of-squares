@@ -1,18 +1,12 @@
 class Squares(private val maxNatural: Int) {
-    fun sumOfSquares(): Int {
-        return (1..maxNatural).sumOf { n -> n * n }
-    }
+    fun sumOfSquares() = (1..maxNatural).sumOf { n -> n * n }
 
     fun squareOfSum(): Int {
         val s = sum()
         return s * s
     }
 
-    fun difference(): Int {
-        return squareOfSum() - sumOfSquares()
-    }
+    fun difference() = squareOfSum() - sumOfSquares()
 
-    private fun sum(): Int {
-        return (1..maxNatural).sum()
-    }
+    private fun sum() = (1..maxNatural).sum()
 }
