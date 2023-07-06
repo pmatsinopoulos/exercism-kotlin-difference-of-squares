@@ -1,15 +1,33 @@
-class Squares {
-    //TODO: implement proper constructor
+import kotlin.math.pow
 
-    fun sumOfSquares() {
-        TODO("Implement the function to complete the task")
+class Squares(private val maxNatural: Int) {
+    fun sumOfSquares(): Int {
+        return sumOfNSquare(maxNatural)
     }
 
-    fun squareOfSum() {
-        TODO("Implement the function to complete the task")
+    fun squareOfSum(): Int {
+        return square(sumOfN(maxNatural))
     }
 
-    fun difference() {
-        TODO("Implement the function to complete the task")
+    fun difference(): Int {
+        return squareOfSum() - sumOfSquares()
+    }
+
+    private fun sumOfN(n: Int): Int {
+        if (n == 1) {
+            return 1
+        }
+        return sumOfN(n - 1) + n
+    }
+
+    private fun square(n: Int): Int {
+        return n.toDouble().pow(2.0).toInt()
+    }
+
+    private fun sumOfNSquare(n: Int): Int {
+        if (n == 1) {
+            return 1
+        }
+        return sumOfNSquare(n - 1) + square(n)
     }
 }
