@@ -1,6 +1,6 @@
 class Squares(private val maxNatural: Int) {
     fun sumOfSquares(): Int {
-        return (1..maxNatural).fold(0) { acc, n -> acc + n * n }
+        return (1..maxNatural).sumOf { n -> n * n }
     }
 
     fun squareOfSum(): Int {
